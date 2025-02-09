@@ -1,9 +1,12 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 // const heading = React.createElement("h1", {id:"heading"}, "Hello world from React");
 // console.log(heading); // returns object
 
 const parent = React.createElement("div", {id: "parent"}, [
     React.createElement("div", {id: "child1"},[
-        React.createElement("h1", {}, "I am heading 1"),
+        React.createElement("h1", {}, "This is namaste react"),
         React.createElement("h2", {}, "I am heading 2")
     ]),
     React.createElement("div", {id: "child1"},[
