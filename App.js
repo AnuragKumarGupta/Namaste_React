@@ -12,8 +12,8 @@ import ReactDOM from "react-dom/client";
 //JSX => react.createElement => reactElement-js object => html element(render)
 
 //react element
-const jsxheading = (
-  <h1 id="heading" tabIndex={5}>
+const MainHeading = () => (
+  <h1 id="heading" tabIndex="5">
     Namaste React using JSX
   </h1>
 );
@@ -23,18 +23,16 @@ const jsxheading = (
 //functiocal component - new
 
 //React functional compponent
-const headingComponent = () => {
-  return <h1 className="heading">React functional component</h1>;
-};
-//or
-const headingComponent2 = () => (
-  <h1 className="heading">Namaste React with Anurag</h1>
-); //better syntax using arrow function
 
-// above both function are same
+const HeadingComponent = () => (
+  <div id="container">
+    <MainHeading />
+    <h1 className="heading">React with Functional Component</h1>
+  </div>
+); //better syntax using arrow function
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // root.render(jsxheading); //rendering react element
 
-root.render(headingComponent()); //rendering react component
+root.render(HeadingComponent()); //rendering react component
