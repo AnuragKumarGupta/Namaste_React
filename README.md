@@ -48,3 +48,7 @@ import component from path;
 
 export const component;
 import {component} from path
+
+Routing
+1- client side routing (normal which we use in react where it doesnt reload the page only component)
+2-server side routing
