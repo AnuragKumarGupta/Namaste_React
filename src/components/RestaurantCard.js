@@ -7,17 +7,17 @@ const RestaurantCard = (props) => {
     resData?.info;
 
   return (
-    <div className="res-card">
+    <div className="m-4 p-4 w-[250px] bg-green-100 rounded-lg hover:bg-green-200 flex-col min-w-0">
       <img
-        className="res-logo"
+        className="rounded-lg"
         alt="res-logo"
         src={
           "https://img.freepik.com/free-photo/top-view-table-full-food_23-2149209253.jpg"
         }
       />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(",")}</h4>
-      <h4>{avgRating} Stars</h4>
+      <h3 className="font-bold py-4 text-lg">{name}</h3>
+      <h4 className="line-clamp-1">{cuisines.join(",")}</h4>
+      <h4 className="bg-green-400">{avgRating} Stars</h4>
       <h4>{costForTwo}</h4>
       <h4>{sla?.slaString}</h4>
     </div>
