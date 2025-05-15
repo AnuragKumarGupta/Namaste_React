@@ -1,0 +1,26 @@
+import { useState } from "react";
+import ItemList from "./itemList";
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
+  const handleClick = () => {
+    setShowIndex();
+    console.log("clicked");
+  };
+  return (
+    // rescategory
+    <div>
+      <div className="w-6/12 mx-auto my-4 bg-gray-100 shadow-lg p-4 cursor-pointer">
+        <div className="flex justify-between" onClick={handleClick}>
+          <span className="font-bold text-lg">
+            {data.title} ({data.itemCards.length})
+          </span>
+          <span>▽</span>
+        </div>
+        <span className="font-bold text-lg">
+          {showItems && <ItemList items={data.itemCards} />}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default RestaurantCategory;
