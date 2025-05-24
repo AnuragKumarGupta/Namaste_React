@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Error from "./components/Error";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import UserContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 //chunking
 //code splitting
@@ -17,6 +19,7 @@ const About = React.lazy(() => import("./components/About"));
 const Body = React.lazy(() => import("./components/Body"));
 const Contact = React.lazy(() => import("./components/Contact"));
 const RestaurantMenu = React.lazy(() => import("./components/RestaurantMenu"));
+const Cart = React.lazy(() => import("./components/Cart"));
 
 const AppLayout = () => {
   //authentication
@@ -28,12 +31,14 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -79,6 +84,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<h1>...Loading</h1>}>
             <Grocery />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<h1>...Loading</h1>}>
+            <Cart />
           </Suspense>
         ),
       },
