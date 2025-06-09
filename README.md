@@ -77,3 +77,8 @@ import {component} from path
 - install babel dependencies
 - configure babel indepedencies(babel.config.js)
 - configure parcel config file to disable default babel transpilation
+- jest configuration npx jest --init
+- install jsdom library
+- install @babel/preset-react for making jsx work in testcases(npm i -D @babel/preset-react)
+- configure babel config file
+- install @testing-library/jest-dom(npm i -D @testing-library/jest-dom)
